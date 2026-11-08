@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atitude Campeã · Minerva Foods</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2E5372">
+<link rel="icon" href="assets/marca/logo-minerva.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
+<style>
+:root{
+  --azul:#2E5372; --azul-900:#1A3245; --azul-50:#EAF0F5;
+  --coral:#E84752; --coral-700:#C2303B; --coral-50:#FDECED;
+  --ouro:#C1B77E; --ouro-claro:#E2D9A8; --ouro-50:#F6F2E2; --ouro-800:#5F5630;
+  --cinza:#F4F6F8; --linha:#DCE3E8; --tinta:#1E2D3A; --suave:#56636F; --branco:#FFFFFF;
+  --fonte:"Montserrat","Segoe UI",system-ui,-apple-system,sans-serif;
+  --raio:16px; --raio-sm:10px;
+  --sombra:0 1px 2px rgba(20,40,60,.06),0 8px 24px rgba(20,40,60,.08);
+  --max:1120px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--branco);color:var(--tinta);font-family:var(--fonte);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;overscroll-behavior-x:none;-webkit-tap-highlight-color:transparent}
+@supports not (overflow-x:clip){body{overflow-x:hidden}}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.15;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.ic{width:22px;height:22px;flex:none}
+
+/* ---------- Topo ---------- */
+.topo{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--linha);padding-top:env(safe-area-inset-top,0px)}
+.topo .wrap{display:flex;align-items:center;gap:12px;height:64px}
+.topo .logo{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.topo .logo img{height:30px;width:auto}
+.topo .logo span{border-left:1px solid var(--linha);padding-left:12px;font-weight:800;font-size:.82rem;line-height:1.15;color:var(--azul);letter-spacing:.02em;text-transform:uppercase}
+.btn-menu{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--azul);background:var(--branco);color:var(--azul);font-weight:700;font-size:.88rem;transition:background .2s,color .2s}
+.btn-menu:hover{background:var(--azul);color:#fff}
+
+/* ---------- Gaveta de setores ---------- */
+.gaveta{position:fixed;inset:0;z-index:60;background:rgba(14,28,40,.55);display:flex;justify-content:flex-end}
+.gaveta[hidden]{display:none}
+.gaveta-painel{width:min(420px,100%);height:100%;background:var(--branco);overflow-y:auto;padding:calc(18px + env(safe-area-inset-top,0px)) 20px calc(24px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px;animation:entra-lado .25s ease-out}
+@keyframes entra-lado{from{transform:translateX(30px);opacity:.4}to{transform:none;opacity:1}}
+.gaveta-topo{display:flex;align-items:center;justify-content:space-between}
+.gaveta-topo h2{font-size:1.25rem}
+.fechar{width:44px;height:44px;border-radius:50%;border:0;background:var(--cinza);display:grid;place-items:center}
+.gaveta a{display:flex;align-items:center;gap:14px;text-decoration:none;padding:8px;border-radius:var(--raio-sm);font-weight:700;transition:background .2s}
+.gaveta a:hover{background:var(--cinza)}
+.gaveta a img{width:64px;height:48px;object-fit:cover;border-radius:8px}
+.gaveta a > .ic{margin-left:auto;color:var(--suave);width:18px}
+.gaveta-atalho{display:grid;place-items:center;flex:none;width:64px;height:48px;border-radius:8px;background:var(--azul-50);color:var(--azul)}
+.gaveta .extra{border-top:1px solid var(--linha);padding-top:12px;margin-top:4px}
+
+/* ---------- Botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 22px;border-radius:999px;border:0;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .15s,background .2s,box-shadow .2s}
+.btn:active{transform:scale(.98)}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 6px 18px rgba(232,71,82,.35)}
+.btn-coral:hover{background:var(--coral-700)}
+.btn-vidro{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.btn-vidro:hover{background:rgba(255,255,255,.24)}
+.btn-azul{background:var(--azul);color:#fff}
+.btn-azul:hover{background:var(--azul-900)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;color:#fff;background:var(--azul-900);overflow:hidden;isolation:isolate}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(26,50,69,.25) 0%,rgba(26,50,69,.55) 45%,rgba(20,38,53,.95) 100%)}
+.hero .wrap{min-height:clamp(480px,76svh,640px);display:flex;flex-direction:column;justify-content:flex-end;gap:16px;padding-block:96px 72px}
+@supports not (height:1svh){.hero .wrap{min-height:520px}}
+.hero h1{font-size:clamp(2.3rem,9.5vw,4.6rem);font-weight:900;line-height:1;overflow-wrap:break-word;hyphens:auto}
+/* Celular: foto inteira em cima, texto embaixo sobre o azul (sem texto em cima de rosto/logotipo) */
+@media (max-width:759px){
+  .hero{display:flex;flex-direction:column}
+  .hero>img{position:relative;inset:auto;height:auto;aspect-ratio:4/3;z-index:0}
+  .hero::after{inset:auto 0 auto 0;top:calc(75vw - 72px);height:72px;z-index:1;background:linear-gradient(180deg,rgba(26,50,69,0),var(--azul-900))}
+  .hero .wrap{position:relative;z-index:2;min-height:0;padding-block:8px 64px;margin-top:-28px;width:100%}
+}
+.hero h1 em{font-style:normal;color:var(--ouro-claro)}
+.hero .lead{font-size:clamp(1.02rem,3.6vw,1.2rem);font-weight:500;color:#E3EAF0;max-width:46ch}
+.hero .acoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+@media (orientation:landscape) and (max-width:950px) and (max-height:500px){
+  .hero-inicio{display:block}
+  .hero-inicio>img{position:absolute;inset:0 auto 0 0;width:38%;height:100%;aspect-ratio:auto;z-index:-1}
+  .hero-inicio::after{content:none}
+  .hero-inicio .wrap{width:62%;margin:0 0 0 auto;min-height:0;gap:10px;padding-block:20px 56px}
+  .hero-inicio h1{font-size:clamp(2rem,5vw,2.5rem)}
+  .hero-inicio .lead{font-size:1rem}
+  .hero-inicio .acoes{margin-top:0}
+}
+.trilha{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:#C8D5E0}
+.trilha a{text-decoration:none}
+.trilha a:hover{text-decoration:underline}
+
+/* ---------- Números ---------- */
+.numeros{position:relative;margin-top:-40px;z-index:2}
+.numeros .caixa{background:var(--branco);border-radius:var(--raio);box-shadow:var(--sombra);display:grid;grid-template-columns:repeat(3,1fr)}
+.numeros .caixa>div{padding:18px 12px;text-align:center;display:grid;gap:2px;align-content:start}
+.numeros .caixa>div+div{border-left:1px solid var(--linha)}
+.numeros b{font-size:clamp(1.5rem,6vw,2.2rem);font-weight:900;color:var(--azul);line-height:1.05;font-variant-numeric:tabular-nums}
+.numeros span{font-size:.78rem;font-weight:600;color:var(--suave);line-height:1.3}
+@media (max-width:379px){.numeros .caixa>div{padding:14px 6px}.numeros span{font-size:.75rem}.btn{padding:0 18px}}
+@media (max-width:339px){.topo .logo span{display:none}}
+
+/* ---------- Seções ---------- */
+.secao{padding-block:64px;scroll-margin-top:72px}
+.secao.cinza{background:var(--cinza)}
+.cab{display:grid;gap:10px;margin-bottom:28px;max-width:640px}
+.kicker{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-700)}
+.cab h2{font-size:clamp(1.7rem,6vw,2.4rem);font-weight:800;color:var(--tinta)}
+.cab p{color:var(--suave);font-size:1rem}
+
+/* ---------- Cards de setor ---------- */
+.grade-setores{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (min-width:760px){.grade-setores{grid-template-columns:repeat(3,1fr);gap:18px}}
+.card-setor{position:relative;display:block;border-radius:var(--raio);overflow:hidden;aspect-ratio:4/5;text-decoration:none;color:#fff;background:var(--azul-900);isolation:isolate;box-shadow:var(--sombra)}
+@media (min-width:760px){.card-setor{aspect-ratio:4/3}}
+.card-setor img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s ease}
+.card-setor::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,38,53,0) 35%,rgba(20,38,53,.92) 100%)}
+.card-setor:hover img{transform:scale(1.05)}
+.card-setor .txt{position:absolute;left:14px;right:14px;bottom:14px;display:grid;gap:2px}
+.card-setor b{font-size:1.15rem;font-weight:800;overflow-wrap:anywhere}
+@media (max-width:359px){
+  .card-setor .txt{left:8px;right:8px}
+  .card-setor b{font-size:.9375rem}
+}
+.card-setor small{font-size:.78rem;font-weight:600;color:var(--ouro-claro);display:flex;align-items:center;gap:4px}
+.card-setor small .ic{width:14px;height:14px}
+
+/* ---------- Faixa anual ---------- */
+.anual{position:relative;color:#fff;background:var(--azul);overflow:hidden;isolation:isolate}
+.anual>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.18;mix-blend-mode:luminosity}
+.anual::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,rgba(26,50,69,.96),rgba(46,83,114,.86))}
+.anual .cab h2,.anual .cab p{color:#fff}
+.anual .cab p{color:#D2DEE8}
+.anual .kicker{color:var(--ouro-claro)}
+.podio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:end}
+.degrau{border-radius:var(--raio) var(--raio) 6px 6px;background:rgba(255,255,255,.08);border:1px solid rgba(226,217,168,.35);text-align:center;padding:18px 8px 16px;display:grid;justify-items:center;gap:6px}
+.degrau.um{padding-top:30px;background:rgba(226,217,168,.16);border-color:var(--ouro-claro)}
+.degrau .ic{width:30px;height:30px;color:var(--ouro-claro)}
+.degrau.um .ic{width:38px;height:38px}
+.degrau b{font-size:clamp(1.6rem,7vw,2.6rem);font-weight:900;line-height:1;color:#fff}
+.degrau small{font-size:.76rem;font-weight:700;color:#D2DEE8;letter-spacing:.04em;text-transform:uppercase}
+.anual .rodape-anual{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:22px}
+.anual .rodape-anual p{color:#D2DEE8;font-size:.92rem}
+
+/* ---------- Prêmios ---------- */
+.vitrine{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin;margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px)));padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.vitrine .premio{flex:0 0 min(46%,210px);scroll-snap-align:start}
+.grade-premios{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (min-width:760px){.grade-premios{grid-template-columns:repeat(3,1fr);gap:16px}}
+.premio{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column}
+.premio .foto{position:relative;aspect-ratio:1/1;background:var(--cinza)}
+.premio .foto img{width:100%;height:100%;object-fit:cover}
+.premio .qtd{position:absolute;top:10px;left:10px;min-width:40px;height:40px;padding:0 10px;border-radius:999px;background:var(--coral);color:#fff;font-weight:900;font-size:1.05rem;display:grid;place-items:center;box-shadow:0 4px 12px rgba(0,0,0,.2);font-variant-numeric:tabular-nums}
+.premio .nome{padding:12px 14px 14px;font-weight:700;font-size:.92rem;line-height:1.3}
+
+/* ---------- Checagem ---------- */
+.checar{background:var(--azul-50);border-radius:var(--raio);padding:22px;display:grid;gap:16px;margin-top:20px}
+.checar h3{font-size:1.25rem;font-weight:800;display:flex;align-items:center;gap:10px}
+.checar h3 .ic{color:var(--azul)}
+.pergunta{display:grid;gap:8px}
+.pergunta p{font-weight:600;font-size:.95rem}
+.sn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sn button{min-height:46px;border:1.5px solid var(--linha);background:var(--branco);border-radius:var(--raio-sm);font-weight:700;font-size:.95rem;transition:border-color .2s,background .2s}
+.sn button:hover{border-color:var(--azul)}
+.sn button[aria-pressed="true"]{background:var(--azul);border-color:var(--azul);color:#fff}
+.resposta{display:flex;gap:12px;align-items:flex-start;border-radius:var(--raio-sm);padding:14px 16px;font-weight:600;font-size:.95rem}
+.resposta .ic{margin-top:1px}
+.resposta.sim{background:#E2F3E7;color:#1D5A31}
+.resposta.nao{background:var(--coral-50);color:#8E1F28}
+.resposta.neutra{background:var(--branco);color:var(--suave);font-weight:500}
+.regras{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.regras li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
+.regras li .ic{width:20px;height:20px;color:var(--azul);margin-top:2px}
+
+/* ---------- Indicadores ---------- */
+.grade-ind{display:grid;gap:12px}
+@media (min-width:760px){.grade-ind{grid-template-columns:repeat(2,1fr);gap:16px}}
+.ind{display:flex;gap:14px;align-items:flex-start;background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);padding:18px}
+.ind .tile{flex:none;width:46px;height:46px;border-radius:12px;background:var(--azul-50);color:var(--azul);display:grid;place-items:center}
+.ind h3{font-size:1.02rem;font-weight:800;margin-bottom:2px}
+.ind p{font-size:.92rem;color:var(--suave)}
+.ind .tag{display:inline-block;margin-top:8px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--azul);background:var(--azul-50);border-radius:999px;padding:3px 10px}
+.ind.alerta{background:var(--coral-50);border-color:#F6C3C7}
+.ind.alerta .tile{background:var(--coral);color:#fff}
+.ind.alerta h3{color:var(--coral-700)}
+.subtitulo{font-size:1.05rem;font-weight:800;margin:30px 0 14px;display:flex;align-items:center;gap:10px}
+.subtitulo::after{content:"";flex:1;height:1px;background:var(--linha)}
+
+/* ---------- Áreas ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{display:inline-flex;align-items:center;gap:8px;background:var(--branco);border:1px solid var(--linha);border-radius:999px;padding:9px 16px;font-weight:600;font-size:.9rem}
+.chips span i{width:7px;height:7px;border-radius:50%;background:var(--coral)}
+.nota{display:flex;gap:12px;align-items:flex-start;background:var(--ouro-50);border-radius:var(--raio-sm);padding:16px;font-size:.95rem;color:var(--ouro-800);font-weight:600;margin-top:16px}
+
+/* ---------- Fatos rápidos do setor ---------- */
+.fatos .caixa{grid-template-columns:repeat(3,1fr)}
+
+/* ---------- Outros setores ---------- */
+.trilho{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin;margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px)));padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.trilho .card-setor{flex:0 0 min(42%,220px);aspect-ratio:3/4;scroll-snap-align:start}
+
+/* ---------- Como funciona ---------- */
+.passos{display:grid;gap:14px;counter-reset:passo}
+@media (min-width:860px){.passos{grid-template-columns:repeat(3,1fr)}}
+.passo{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);padding:22px;display:grid;gap:10px;align-content:start}
+.passo .num{width:44px;height:44px;border-radius:50%;background:var(--azul);color:#fff;font-weight:900;font-size:1.1rem;display:grid;place-items:center}
+.passo h3{font-size:1.15rem;font-weight:800}
+.passo p{color:var(--suave);font-size:.95rem}
+.barras{display:grid;gap:8px;margin-top:6px}
+.barras div{display:grid;grid-template-columns:72px 1fr 54px;align-items:center;gap:10px;font-size:.86rem;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.barras i{display:block;height:12px;border-radius:6px;background:linear-gradient(90deg,var(--azul),#4C79A0)}
+.barras em{font-style:normal;color:var(--suave);text-align:right}
+.opcoes{display:grid;gap:16px}
+@media (min-width:860px){.opcoes{grid-template-columns:1fr 1fr}}
+.opcao{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);padding:20px;display:grid;gap:14px}
+.opcao h3{font-size:1.15rem;font-weight:800}
+.mini-premios{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px}
+.mini{display:grid;gap:6px;font-size:.78rem;font-weight:700;line-height:1.25}
+.mini .foto{position:relative;aspect-ratio:1;border-radius:12px;overflow:hidden;background:var(--cinza)}
+.mini img{width:100%;height:100%;object-fit:cover}
+.mini .qtd{position:absolute;top:6px;left:6px;min-width:28px;height:28px;padding:0 6px;border-radius:999px;background:var(--coral);color:#fff;font-size:.82rem;font-weight:900;display:grid;place-items:center}
+.tabela{width:100%;border-collapse:collapse;background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;font-size:.95rem}
+.tabela td{padding:14px 16px;border-bottom:1px solid var(--linha);vertical-align:top}
+.tabela td:last-child{text-align:right;font-weight:800;color:var(--coral-700);white-space:nowrap;font-variant-numeric:tabular-nums}
+.tabela tr:last-child td{border-bottom:0}
+.pequeno{font-size:.88rem;color:var(--suave);margin-top:12px}
+.duas{display:grid;gap:28px}
+@media (min-width:860px){.duas{grid-template-columns:1fr 1fr;gap:40px}}
+
+/* ---------- Valores e rodapé ---------- */
+.valores{display:grid;grid-template-columns:repeat(5,minmax(110px,1fr));gap:12px;overflow-x:auto;padding-bottom:6px}
+.valor{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);padding:14px;display:grid;justify-items:center;text-align:center}
+.valor img{height:118px;width:auto;object-fit:contain}
+.rodape{background:var(--azul-900);color:#C9D6E1;padding-block:44px calc(44px + env(safe-area-inset-bottom,0px))}
+.rodape .wrap{display:grid;gap:18px}
+.rodape .logo-branco{background:#fff;border-radius:12px;padding:10px 14px;justify-self:start}
+.rodape .logo-branco img{height:30px;width:auto}
+.rodape q{font-size:1.25rem;font-weight:700;color:#fff;max-width:28ch;line-height:1.3}
+.rodape small{font-size:.8rem}
+.rodape .nota-privacidade{max-width:65ch}
+
+.view{animation:aparece .3s ease-out}
+@keyframes aparece{from{opacity:.5}to{opacity:1}}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Atitude Campeã, página inicial">
+      <img src="assets/marca/logo-minerva.png" alt="Minerva Foods" width="68" height="30">
+      <span>Atitude<br>Campeã</span>
+    </a>
+    <button class="btn-menu" id="abrir-menu" type="button" aria-haspopup="dialog" aria-controls="gaveta">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      Setores
+    </button>
+  </div>
+</header>
+
+<div class="gaveta" id="gaveta" role="dialog" aria-modal="true" aria-label="Escolha o setor" hidden>
+  <nav class="gaveta-painel" id="gaveta-painel"></nav>
+</div>
+
+<main id="app"></main>
+
+<script src="dados.js"></script>
+<script>
+(function(){
+  var D = window.ATITUDE, app = document.getElementById('app');
+
+  /* Ícones (traço, estilo Lucide) */
+  var P = {
+    seta:'<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+    chevron:'<path d="m9 18 6-6-6-6"/>',
+    voltar:'<path d="m15 18-6-6 6-6"/>',
+    x:'<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+    trofeu:'<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>',
+    presente:'<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/>',
+    check:'<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
+    alerta:'<circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/>',
+    duvida:'<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',
+    qualidade:'<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+    produtividade:'<path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/>',
+    rendimento:'<path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/>',
+    recursos:'<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>',
+    estoque:'<path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/>',
+    clientes:'<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/>',
+    prazo:'<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+    gestao:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+    pessoas:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+    seguranca:'<path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M14 6a6 6 0 0 1 6 6v3"/><path d="M4 15v-3a6 6 0 0 1 6-6"/><rect x="2" y="15" width="20" height="4" rx="1"/>',
+    local:'<path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
+    marca:'<path d="M12.59 2.59A2 2 0 0 0 11.17 2H4a2 2 0 0 0-2 2v7.17a2 2 0 0 0 .59 1.42l8.7 8.7a2.43 2.43 0 0 0 3.42 0l6.58-6.58a2.43 2.43 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/>',
+    info:'<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',
+    regra:'<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>'
+  };
+  var NOMES_CAT = {qualidade:'Qualidade',produtividade:'Produtividade',rendimento:'Rendimento',recursos:'Recursos',estoque:'Estoque',clientes:'Clientes',prazo:'Prazo',gestao:'Gestão',pessoas:'Pessoas',seguranca:'Segurança'};
+  function ic(n,cls){return '<svg class="ic'+(cls?' '+cls:'')+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+P[n]+'</svg>';}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function soma(l){return l.reduce(function(t,p){return t+p[0];},0);}
+  function fotoPremio(k){
+    var arquivo = k === 'microondas' ? 'microondas-quadrado.webp' : k + '.jpg';
+    return 'assets/premios/' + arquivo;
+  }
+  function setorPorId(id){return D.setores.filter(function(s){return s.id===id;})[0];}
+
+  /* ---------- Blocos reutilizáveis ---------- */
+  function cardSetor(s){
+    return '<a class="card-setor" href="#setor-'+s.id+'"><img src="'+s.foto+'" alt="" loading="lazy" style="object-position:'+(s.posFoto||'50% 50%')+'">'+
+      '<span class="txt"><b>'+esc(s.nome)+'</b><small>'+ic('presente')+soma(s.premios)+' prêmios no mês</small></span></a>';
+  }
+  function premioCard(p){
+    return '<div class="premio"><div class="foto"><img src="'+fotoPremio(p[2])+'" alt="" loading="lazy"><span class="qtd">'+p[0]+'×</span></div><div class="nome">'+esc(p[1])+'</div></div>';
+  }
+  function podio(){
+    var ordem=[D.anual.podio[1],D.anual.podio[0],D.anual.podio[2]], cls=['dois','um','tres'];
+    return '<div class="podio">'+ordem.map(function(p,i){return '<div class="degrau '+cls[i]+'">'+ic('trofeu')+'<b>'+p.valor+'</b><small>'+p.lugar+'</small></div>';}).join('')+'</div>';
+  }
+  function faixaAnual(){
+    return '<section class="anual secao"><img src="assets/fotos/fachada.jpg" alt="" loading="lazy"><div class="wrap">'+
+      '<div class="cab"><span class="kicker">Prêmio do ano</span><h2>As 3 melhores unidades recebem em salário</h2><p>O ranking soma os pontos de todos os meses. A unidade campeã leva o equivalente a uma remuneração inteira para cada colaborador.</p></div>'+
+      podio()+
+      '<div class="rodape-anual"><p>'+esc(D.anual.pagamento)+'</p><a class="btn btn-coral" href="#como-funciona">Como funciona '+ic('seta')+'</a></div>'+
+    '</div></section>';
+  }
+  function rodape(){
+    return '<footer class="rodape"><div class="wrap">'+
+      '<span class="logo-branco"><img src="assets/marca/logo-minerva.png" alt="Minerva Foods" width="68" height="30"></span>'+
+      '<q>'+esc(D.programa.proposito)+'</q>'+
+      '<small>Programa Atitude Campeã · '+esc(D.programa.versao)+' · Prévia para validação</small>'+
+      '<small class="nota-privacidade"><strong>Privacidade.</strong> As respostas do simulador ficam no seu navegador. O simulador funciona sem cookies. Os sorteios são de responsabilidade da Minerva Foods.</small>'+
+    '</div></footer>';
+  }
+  function numeros(lista, cls){
+    return '<div class="numeros '+(cls||'')+'"><div class="wrap"><div class="caixa">'+lista.map(function(n){return '<div><b>'+n.valor+'</b><span>'+esc(n.texto)+'</span></div>';}).join('')+'</div></div></div>';
+  }
+
+  /* ---------- Página inicial ---------- */
+  function inicio(){
+    var p=D.programa, todos={};
+    D.setores.forEach(function(s){s.premios.forEach(function(x){if(!todos[x[2]])todos[x[2]]=x[1].replace(/^\d+\s*/,'');});});
+    D.melhorUnidade.forEach(function(o){o.premios.forEach(function(x){if(!todos[x[2]])todos[x[2]]=x[1];});});
+    var nomesVitrine={tv:'Smart TV 32"',bicicleta:'Bicicleta aro 29',moto:'Moto 125 cc',airfryer:'Air fryer',microondas:'Micro‑ondas',grill:'Grill elétrico',ventilador:'Ventilador',geladeira:'Geladeira 240 L',maquina:'Máquina de lavar 10 kg',ar:'Ar‑condicionado'};
+    var ordem=['moto','tv','geladeira','maquina','ar','bicicleta','airfryer','microondas','grill','ventilador'];
+    return '<div class="view">'+
+      '<section class="hero hero-inicio"><img src="assets/fotos/inicio.jpg" alt="" style="object-position:60% 30%"><div class="wrap">'+
+
+        '<h1>Atitude <em>Campeã</em></h1>'+
+        '<p class="lead">'+esc(p.chamada)+' Veja o que o seu setor precisa entregar e quais prêmios estão em jogo.</p>'+
+        '<div class="acoes"><button class="btn btn-coral" type="button" data-rolar="setores">Escolher meu setor '+ic('seta')+'</button><a class="btn btn-vidro" href="#como-funciona">Como funciona</a></div>'+
+      '</div></section>'+
+      numeros(p.numeros)+
+      '<section class="secao" id="setores"><div class="wrap">'+
+        '<div class="cab"><span class="kicker">Escolha seu setor</span><h2>Qual é o seu time?</h2><p>Cada setor tem seus próprios indicadores e prêmios. Toque no seu para ver tudo.</p></div>'+
+        '<div class="grade-setores">'+D.setores.map(cardSetor).join('')+'</div>'+
+      '</div></section>'+
+      '<section class="secao cinza"><div class="wrap">'+
+        '<div class="cab"><span class="kicker">Prêmios do mês</span><h2>O que pode ser seu</h2><p>Os setores campeões do mês têm seus prêmios sorteados entre a equipe.</p></div>'+
+        '<div class="vitrine">'+ordem.map(function(k){return '<div class="premio"><div class="foto"><img src="'+fotoPremio(k)+'" alt="" loading="lazy"></div><div class="nome">'+esc(nomesVitrine[k])+'</div></div>';}).join('')+'</div>'+
+      '</div></section>'+
+      faixaAnual()+
+      '<section class="secao"><div class="wrap">'+
+        '<div class="cab"><span class="kicker">Nosso jeito</span><h2>Os valores que guiam o programa</h2><p>'+esc(p.descricao)+'</p></div>'+
+        '<div class="valores">'+p.valores.map(function(v){return '<div class="valor"><img src="'+v.img+'" alt="'+esc(v.nome)+'" loading="lazy"></div>';}).join('')+'</div>'+
+      '</div></section>'+
+      rodape()+
+    '</div>';
+  }
+
+  /* ---------- Landing page do setor ---------- */
+  var resp={terceirizado:null,contrato:null,falta:null,lider:null};
+  function landing(s){
+    var outros=D.setores.filter(function(o){return o.id!==s.id;});
+    var indic=s.indicadores.map(function(i){
+      return '<article class="ind"><span class="tile">'+ic(i[2])+'</span><div><h3>'+esc(i[0])+'</h3><p>'+esc(i[1])+'</p><span class="tag">'+NOMES_CAT[i[2]]+'</span></div></article>';
+    }).join('');
+    var comuns=s.semComuns?'':'<h3 class="subtitulo">Vale para todos os setores</h3><div class="grade-ind">'+D.comuns.map(function(c){
+      return '<article class="ind'+(c.alerta?' alerta':'')+'"><span class="tile">'+ic(c.cat)+'</span><div><h3>'+esc(c.nome)+'</h3><p>'+esc(c.texto)+'</p></div></article>';
+    }).join('')+'</div>';
+    return '<div class="view">'+
+      '<section class="hero"><img src="'+s.foto+'" alt="" style="object-position:'+(s.posFoto||'50% 50%')+'"><div class="wrap">'+
+        '<nav class="trilha" aria-label="Você está em"><a href="#inicio">Início</a>'+ic('chevron')+'<span>Setores</span>'+ic('chevron')+'<span>'+esc(s.nome)+'</span></nav>'+
+
+        '<h1>'+esc(s.nome)+'</h1>'+
+        '<p class="lead">'+esc(s.frase)+'</p>'+
+        '<div class="acoes"><button class="btn btn-coral" type="button" data-rolar="premios">Ver prêmios do mês '+ic('seta')+'</button><button class="btn btn-vidro" type="button" data-rolar="entregas">O que entregar</button></div>'+
+      '</div></section>'+
+      numeros([{valor:String(s.indicadores.length),texto:s.indicadores.length===1?'indicador do setor':'indicadores do setor'},{valor:String(soma(s.premios)),texto:'prêmios sorteados no mês'},{valor:String(s.areas.length),texto:s.areas.length===1?'área participante':'áreas participantes'}],'fatos')+
+
+      '<section class="secao" id="premios"><div class="wrap">'+
+        '<div class="cab"><span class="kicker">Prêmio do mês</span><h2>Se o setor for campeão, estes prêmios são sorteados</h2><p>O sorteio acontece entre os colaboradores do setor que cumprem as regras abaixo.</p></div>'+
+        '<div class="grade-premios">'+s.premios.map(premioCard).join('')+'</div>'+
+        (s.nota?'<div class="nota">'+ic('info')+'<span>'+esc(s.nota)+'</span></div>':'')+
+        '<div class="duas" style="margin-top:28px">'+
+          '<div><h3 class="subtitulo" style="margin-top:0">Quem participa do sorteio</h3><ul class="regras">'+D.sorteio.map(function(r){return '<li>'+ic('check')+'<span>'+esc(r)+'</span></li>';}).join('')+'</ul></div>'+
+          checador()+
+        '</div>'+
+      '</div></section>'+
+
+      '<section class="secao cinza" id="entregas"><div class="wrap">'+
+        '<div class="cab"><span class="kicker">O que o setor entrega</span><h2>Os indicadores que contam pontos</h2><p>Todo mês o setor é comparado com o mesmo setor das outras unidades. Quanto melhor a posição, mais pontos para a unidade.</p></div>'+
+        '<div class="grade-ind">'+indic+'</div>'+
+        comuns+
+      '</div></section>'+
+
+      '<section class="secao"><div class="wrap">'+
+        '<div class="cab"><span class="kicker">Quem faz parte</span><h2>As áreas que concorrem juntas</h2><p>Quem trabalha nestas áreas soma pontos e participa do sorteio do setor.</p></div>'+
+        '<div class="chips">'+s.areas.map(function(a){return '<span><i></i>'+esc(a)+'</span>';}).join('')+'</div>'+
+      '</div></section>'+
+
+      faixaAnual()+
+
+      '<section class="secao"><div class="wrap">'+
+        '<div class="cab"><span class="kicker">Outros setores</span><h2>Conheça os outros times</h2></div>'+
+        '<div class="trilho">'+outros.map(cardSetor).join('')+'</div>'+
+      '</div></section>'+
+      rodape()+
+    '</div>';
+  }
+
+  function checador(){
+    var qs=[
+      ['terceirizado','Você trabalha como terceirizado?'],
+      ['contrato','Você foi contratado até o dia 15 deste mês?'],
+      ['falta','Teve alguma falta injustificada neste mês?'],
+      ['lider','Você é gerente, coordenador ou supervisor?']
+    ];
+    var v=veredito();
+    return '<div class="checar" id="checar"><h3>'+ic('duvida')+'Eu participo do sorteio?</h3>'+
+      qs.map(function(q){return '<div class="pergunta"><p>'+q[1]+'</p><div class="sn">'+['sim','nao'].map(function(x){return '<button type="button" data-q="'+q[0]+'" data-v="'+x+'" aria-pressed="'+(resp[q[0]]===x)+'">'+(x==='sim'?'Sim':'Não')+'</button>';}).join('')+'</div></div>';}).join('')+
+      '<div class="resposta '+v.c+'" aria-live="polite">'+conteudoVeredito(v)+'</div></div>';
+  }
+  function conteudoVeredito(v){
+    var icone = v.c === 'sim' ? 'check' : v.c === 'nao' ? 'alerta' : 'info';
+    return ic(icone) + '<span>' + esc(v.t) + '</span>';
+  }
+  function veredito(){
+    if(resp.terceirizado==='sim')return{c:'nao',t:'Colaboradores terceirizados não participam do sorteio mensal.'};
+    if(resp.contrato==='nao')return{c:'nao',t:'Neste mês ainda não. Quem é contratado depois do dia 15 entra no sorteio a partir do mês seguinte.'};
+    if(resp.falta==='sim')return{c:'nao',t:'Neste mês não. Falta injustificada tira do sorteio. No próximo mês você volta a concorrer.'};
+    if(resp.lider==='sim')return{c:'nao',t:'Lideranças não entram no sorteio mensal, mas participam do prêmio do ano.'};
+    if(resp.terceirizado==='nao'&&resp.contrato==='sim'&&resp.falta==='nao'&&resp.lider==='nao')return{c:'sim',t:'Você participa! Se o seu setor for campeão do mês, você concorre aos prêmios.'};
+    return{c:'neutra',t:'Responda às quatro perguntas para saber.'};
+  }
+
+  /* ---------- Como funciona ---------- */
+  function comoFunciona(){
+    var a=D.anual, pts=[[1,20],[2,19],[3,18],[4,17],[16,5]];
+    return '<div class="view">'+
+      '<section class="hero"><img src="assets/fotos/fachada.jpg" alt="" style="object-position:50% 60%"><div class="wrap">'+
+        '<nav class="trilha" aria-label="Você está em"><a href="#inicio">Início</a>'+ic('chevron')+'<span>Como funciona</span></nav>'+
+        '<h1>Como funciona</h1>'+
+        '<p class="lead">Do trabalho de cada dia até o prêmio: entenda como a sua unidade soma pontos e quem tem direito a cada premiação.</p>'+
+      '</div></section>'+
+      '<section class="secao"><div class="wrap">'+
+        '<div class="cab"><span class="kicker">Passo a passo</span><h2>Três etapas até o prêmio</h2></div>'+
+        '<div class="passos">'+
+          '<div class="passo"><span class="num">1</span><h3>Todo mês, cada setor é comparado</h3><p>O seu setor é comparado com o mesmo setor das outras unidades, indicador por indicador. Quanto melhor a posição, mais pontos.</p>'+
+            '<div class="barras">'+pts.map(function(p){return '<div><span>'+p[0]+'º lugar</span><i style="width:'+(p[1]/20*100)+'%"></i><em>'+p[1]+' pts</em></div>';}).join('')+'</div></div>'+
+          '<div class="passo"><span class="num">2</span><h3>O setor campeão ganha prêmios</h3><p>Os prêmios do setor campeão do mês são sorteados entre a equipe que cumpre as regras do sorteio. Cada setor tem a sua lista.</p></div>'+
+          '<div class="passo"><span class="num">3</span><h3>As melhores do ano recebem em salário</h3><p>Somando os meses sai o ranking anual. As três melhores unidades recebem 100%, 50% e 25% da remuneração.</p></div>'+
+        '</div>'+
+      '</div></section>'+
+      '<section class="secao cinza"><div class="wrap">'+
+        '<div class="cab"><span class="kicker">Melhor Unidade do mês</span><h2>Prêmios para a unidade campeã</h2><p>Além dos setores, a melhor unidade do mês também é premiada.</p></div>'+
+        '<div class="opcoes">'+D.melhorUnidade.map(function(o){
+          return '<div class="opcao"><h3>'+esc(o.nome)+'</h3><div class="mini-premios">'+o.premios.map(function(p){return '<div class="mini"><div class="foto"><img src="'+fotoPremio(p[2])+'" alt="" loading="lazy"><span class="qtd">'+p[0]+'×</span></div>'+esc(p[1])+'</div>';}).join('')+'</div></div>';
+        }).join('')+'</div>'+
+        '<div class="duas" style="margin-top:40px">'+
+          '<div><h3 class="subtitulo" style="margin-top:0">Quem participa do sorteio mensal</h3><ul class="regras">'+D.sorteio.map(function(r){return '<li>'+ic('check')+'<span>'+esc(r)+'</span></li>';}).join('')+'</ul></div>'+
+          '<div><h3 class="subtitulo" style="margin-top:0">Quem tem direito ao prêmio do ano</h3><ul class="regras">'+a.direito.map(function(r){return '<li>'+ic('check')+'<span>'+esc(r)+'</span></li>';}).join('')+'</ul></div>'+
+        '</div>'+
+      '</div></section>'+
+      faixaAnual().replace('<a class="btn btn-coral" href="#como-funciona">Como funciona '+ic('seta')+'</a>','<a class="btn btn-coral" href="#inicio">Ver meu setor '+ic('seta')+'</a>')+
+      '<section class="secao"><div class="wrap">'+
+        '<div class="cab"><span class="kicker">Atenção</span><h2>O que reduz o prêmio do ano</h2><p>Faltas e advertências por segurança diminuem o valor que cada colaborador recebe.</p></div>'+
+        '<div style="overflow-x:auto"><table class="tabela"><tbody>'+a.descontos.map(function(d){return '<tr><td>'+esc(d[0])+'</td><td>'+d[1]+'</td></tr>';}).join('')+'</tbody></table></div>'+
+        '<p class="pequeno">'+esc(a.abonos)+'</p>'+
+      '</div></section>'+
+      rodape()+
+    '</div>';
+  }
+
+  /* ---------- Gaveta ---------- */
+  var gaveta=document.getElementById('gaveta'), painelG=document.getElementById('gaveta-painel'), btnMenu=document.getElementById('abrir-menu');
+  painelG.innerHTML='<div class="gaveta-topo"><h2>Escolha o setor</h2><button class="fechar" type="button" id="fechar-menu" aria-label="Fechar">'+ic('x')+'</button></div>'+
+    D.setores.map(function(s){return '<a href="#setor-'+s.id+'"><img src="'+s.foto+'" alt="" style="object-position:'+(s.posFoto||'50% 50%')+'">'+esc(s.nome)+ic('chevron')+'</a>';}).join('')+
+    '<div class="extra"><a href="#como-funciona"><span class="gaveta-atalho">'+ic('regra')+'</span>Como funciona'+ic('chevron')+'</a>'+
+    '<a href="#inicio"><span class="gaveta-atalho">'+ic('local')+'</span>Início'+ic('chevron')+'</a></div>';
+  function abrirMenu(){gaveta.hidden=false;document.body.style.overflow='hidden';document.getElementById('fechar-menu').focus();}
+  function fecharMenu(){gaveta.hidden=true;document.body.style.overflow='';}
+  btnMenu.addEventListener('click',abrirMenu);
+  gaveta.addEventListener('click',function(e){if(e.target===gaveta||e.target.closest('#fechar-menu')||e.target.closest('a'))fecharMenu();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!gaveta.hidden){fecharMenu();btnMenu.focus();}});
+
+  /* ---------- Rotas ---------- */
+  var atual=null;
+  function render(){
+    var h=location.hash.replace('#',''), s=h.indexOf('setor-')===0&&setorPorId(h.slice(6));
+    if(s){if(atual!==s.id)resp={terceirizado:null,contrato:null,falta:null,lider:null};atual=s.id;app.innerHTML=landing(s);document.title=s.nome+' · Atitude Campeã';}
+    else if(h==='como-funciona'){atual=null;app.innerHTML=comoFunciona();document.title='Como funciona · Atitude Campeã';}
+    else{atual=null;app.innerHTML=inicio();document.title='Atitude Campeã · Minerva Foods';}
+  }
+  app.addEventListener('click',function(e){
+    var r=e.target.closest('[data-rolar]');
+    if(r){var alvo=document.getElementById(r.dataset.rolar);if(alvo){var y=alvo.getBoundingClientRect().top+window.scrollY-70;window.scrollTo({top:y,behavior:'smooth'});}return;}
+    var q=e.target.closest('[data-q]');
+    if(q){
+      resp[q.dataset.q] = q.dataset.v;
+      q.closest('.sn').querySelectorAll('button').forEach(function(botao){
+        botao.setAttribute('aria-pressed', String(botao === q));
+      });
+
+      var resultado = document.querySelector('#checar .resposta');
+      var v = veredito();
+      resultado.className = 'resposta ' + v.c;
+      resultado.innerHTML = conteudoVeredito(v);
+    }
+  });
+  window.addEventListener('hashchange',function(){render();window.scrollTo(0,0);});
+  render();
+})();
+</script>
+</body>
+</html>
