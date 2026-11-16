@@ -23,8 +23,8 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--branco);color:var(--tinta);font-family:var(--fonte);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;overscroll-behavior-x:none;-webkit-tap-highlight-color:transparent}
 @supports not (overflow-x:clip){body{overflow-x:hidden}}
 img{max-width:100%;display:block}
@@ -65,8 +65,6 @@ p{margin:0}
 .btn:active{transform:scale(.98)}
 .btn-coral{background:var(--coral);color:#fff;box-shadow:0 6px 18px rgba(232,71,82,.35)}
 .btn-coral:hover{background:var(--coral-700)}
-.btn-vidro{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.55)}
-.btn-vidro:hover{background:rgba(255,255,255,.24)}
 .btn-azul{background:var(--azul);color:#fff}
 .btn-azul:hover{background:var(--azul-900)}
 
@@ -86,28 +84,11 @@ p{margin:0}
 }
 .hero h1 em{font-style:normal;color:var(--ouro-claro)}
 .hero .lead{font-size:clamp(1.02rem,3.6vw,1.2rem);font-weight:500;color:#E3EAF0;max-width:46ch}
-.hero .acoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-@media (orientation:landscape) and (max-width:950px) and (max-height:500px){
-  .hero-inicio{display:block}
-  .hero-inicio>img{position:absolute;inset:0 auto 0 0;width:38%;height:100%;aspect-ratio:auto;z-index:-1}
-  .hero-inicio::after{content:none}
-  .hero-inicio .wrap{width:62%;margin:0 0 0 auto;min-height:0;gap:10px;padding-block:20px 56px}
-  .hero-inicio h1{font-size:clamp(2rem,5vw,2.5rem)}
-  .hero-inicio .lead{font-size:1rem}
-  .hero-inicio .acoes{margin-top:0}
-}
 .trilha{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:#C8D5E0}
 .trilha a{text-decoration:none}
 .trilha a:hover{text-decoration:underline}
 
-/* ---------- Números ---------- */
-.numeros{position:relative;margin-top:-40px;z-index:2}
-.numeros .caixa{background:var(--branco);border-radius:var(--raio);box-shadow:var(--sombra);display:grid;grid-template-columns:repeat(3,1fr)}
-.numeros .caixa>div{padding:18px 12px;text-align:center;display:grid;gap:2px;align-content:start}
-.numeros .caixa>div+div{border-left:1px solid var(--linha)}
-.numeros b{font-size:clamp(1.5rem,6vw,2.2rem);font-weight:900;color:var(--azul);line-height:1.05;font-variant-numeric:tabular-nums}
-.numeros span{font-size:.78rem;font-weight:600;color:var(--suave);line-height:1.3}
-@media (max-width:379px){.numeros .caixa>div{padding:14px 6px}.numeros span{font-size:.75rem}.btn{padding:0 18px}}
+@media (max-width:379px){.btn{padding:0 18px}}
 @media (max-width:339px){.topo .logo span{display:none}}
 
 /* ---------- Seções ---------- */
@@ -118,22 +99,40 @@ p{margin:0}
 .cab h2{font-size:clamp(1.7rem,6vw,2.4rem);font-weight:800;color:var(--tinta)}
 .cab p{color:var(--suave);font-size:1rem}
 
-/* ---------- Cards de setor ---------- */
-.grade-setores{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media (min-width:760px){.grade-setores{grid-template-columns:repeat(3,1fr);gap:18px}}
-.card-setor{position:relative;display:block;border-radius:var(--raio);overflow:hidden;aspect-ratio:4/5;text-decoration:none;color:#fff;background:var(--azul-900);isolation:isolate;box-shadow:var(--sombra)}
-@media (min-width:760px){.card-setor{aspect-ratio:4/3}}
-.card-setor img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s ease}
-.card-setor::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,38,53,0) 35%,rgba(20,38,53,.92) 100%)}
-.card-setor:hover img{transform:scale(1.05)}
-.card-setor .txt{position:absolute;left:14px;right:14px;bottom:14px;display:grid;gap:2px}
-.card-setor b{font-size:1.15rem;font-weight:800;overflow-wrap:anywhere}
-@media (max-width:359px){
-  .card-setor .txt{left:8px;right:8px}
-  .card-setor b{font-size:.9375rem}
+/* ---------- Consulta ---------- */
+.consulta{background:var(--cinza)}
+.consulta-cab{background:var(--azul-900);color:var(--branco)}
+.consulta-cab .wrap{padding-block:24px}
+.consulta-cab h1{font-size:clamp(1.65rem,6vw,2.4rem);font-weight:900;overflow-wrap:anywhere}
+.consulta-cab p{margin-top:6px;color:#E3EAF0;font-size:.95rem}
+.consulta-cab a{display:inline-flex;align-items:center;min-height:44px;font-size:.875rem;text-underline-offset:4px}
+.consulta-cab-setor{position:relative;isolation:isolate}
+.consulta-cab-foto{position:absolute;inset:0 0 0 auto;width:min(54%,540px);z-index:-1;pointer-events:none}
+.consulta-cab-foto img{display:block;width:100%;height:100%;object-fit:cover}
+.consulta-cab-foto::after{content:"";position:absolute;inset:0 0 0 -1px;background:linear-gradient(to right,var(--azul-900) 5%,transparent 86%)}
+.consulta-corpo{padding-block:20px 36px}
+.consulta-corpo h2{font-size:1.25rem;margin-bottom:12px}
+.grade-setores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.setor-link{display:flex;align-items:center;gap:8px;min-height:52px;padding:10px 12px;background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio-sm);text-decoration:none;color:var(--azul-900);font-weight:750;font-size:.9rem;line-height:1.25}
+.setor-link span{min-width:0;overflow-wrap:anywhere}
+.setor-link .ic{margin-left:auto;width:16px;height:16px;color:var(--azul)}
+.setor-link:hover,.aba-consulta:not([aria-pressed="true"]):hover{background:var(--azul-50)}
+.links-consulta{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:16px;color:var(--azul);font-weight:700;font-size:.9rem}
+.links-consulta a{display:inline-flex;align-items:center;min-height:44px;text-underline-offset:4px}
+.detalhe-consulta{margin-top:12px;padding:0 14px;border:1px solid var(--linha);border-radius:var(--raio-sm);background:var(--branco)}
+.detalhe-consulta summary{padding-block:12px;font-weight:700;color:var(--azul);cursor:pointer}
+.detalhe-consulta[open]>*:last-child{margin-bottom:14px}
+.detalhe-consulta p{color:var(--suave);margin-bottom:12px}
+.abas-consulta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;padding:4px;margin-bottom:20px;border:1px solid var(--linha);border-radius:var(--raio-sm);background:var(--branco)}
+.aba-consulta{min-height:44px;padding:6px 3px;border:0;border-radius:7px;background:transparent;color:var(--azul-900);font-size:clamp(.75rem,2.7vw,.9rem);font-weight:750;line-height:1.25}
+.aba-consulta[aria-pressed="true"]{background:var(--azul-900);color:var(--branco)}
+.painel-consulta>p{margin-bottom:16px;color:var(--suave)}
+.painel-consulta .checar{margin-top:0}
+@media (min-width:760px){
+  .grade-setores{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .setor-link{min-height:60px;padding-inline:16px;font-size:1rem}
+  .abas-consulta{max-width:490px}
 }
-.card-setor small{font-size:.78rem;font-weight:600;color:var(--ouro-claro);display:flex;align-items:center;gap:4px}
-.card-setor small .ic{width:14px;height:14px}
 
 /* ---------- Faixa anual ---------- */
 .anual{position:relative;color:#fff;background:var(--azul);overflow:hidden;isolation:isolate}
@@ -153,8 +152,6 @@ p{margin:0}
 .anual .rodape-anual p{color:#D2DEE8;font-size:.92rem}
 
 /* ---------- Prêmios ---------- */
-.vitrine{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin;margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px)));padding-inline:max(20px,env(safe-area-inset-left,0px))}
-.vitrine .premio{flex:0 0 min(46%,210px);scroll-snap-align:start}
 .grade-premios{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 @media (min-width:760px){.grade-premios{grid-template-columns:repeat(3,1fr);gap:16px}}
 .premio{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column}
@@ -201,13 +198,6 @@ p{margin:0}
 .chips span{display:inline-flex;align-items:center;gap:8px;background:var(--branco);border:1px solid var(--linha);border-radius:999px;padding:9px 16px;font-weight:600;font-size:.9rem}
 .chips span i{width:7px;height:7px;border-radius:50%;background:var(--coral)}
 .nota{display:flex;gap:12px;align-items:flex-start;background:var(--ouro-50);border-radius:var(--raio-sm);padding:16px;font-size:.95rem;color:var(--ouro-800);font-weight:600;margin-top:16px}
-
-/* ---------- Fatos rápidos do setor ---------- */
-.fatos .caixa{grid-template-columns:repeat(3,1fr)}
-
-/* ---------- Outros setores ---------- */
-.trilho{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin;margin-inline:calc(-1 * max(20px,env(safe-area-inset-left,0px)));padding-inline:max(20px,env(safe-area-inset-left,0px))}
-.trilho .card-setor{flex:0 0 min(42%,220px);aspect-ratio:3/4;scroll-snap-align:start}
 
 /* ---------- Como funciona ---------- */
 .passos{display:grid;gap:14px;counter-reset:passo}
@@ -274,7 +264,7 @@ p{margin:0}
 
 <main id="app"></main>
 
-<script src="dados.js"></script>
+<script src="dados.js?v=cabecalho-setores"></script>
 <script>
 (function(){
   var D = window.ATITUDE, app = document.getElementById('app');
@@ -308,7 +298,6 @@ p{margin:0}
   var NOMES_CAT = {qualidade:'Qualidade',produtividade:'Produtividade',rendimento:'Rendimento',recursos:'Recursos',estoque:'Estoque',clientes:'Clientes',prazo:'Prazo',gestao:'Gestão',pessoas:'Pessoas',seguranca:'Segurança'};
   function ic(n,cls){return '<svg class="ic'+(cls?' '+cls:'')+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+P[n]+'</svg>';}
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  function soma(l){return l.reduce(function(t,p){return t+p[0];},0);}
   function fotoPremio(k){
     var arquivo = k === 'microondas' ? 'microondas-quadrado.webp' : k + '.jpg';
     return 'assets/premios/' + arquivo;
@@ -316,10 +305,6 @@ p{margin:0}
   function setorPorId(id){return D.setores.filter(function(s){return s.id===id;})[0];}
 
   /* ---------- Blocos reutilizáveis ---------- */
-  function cardSetor(s){
-    return '<a class="card-setor" href="#setor-'+s.id+'"><img src="'+s.foto+'" alt="" loading="lazy" style="object-position:'+(s.posFoto||'50% 50%')+'">'+
-      '<span class="txt"><b>'+esc(s.nome)+'</b><small>'+ic('presente')+soma(s.premios)+' prêmios no mês</small></span></a>';
-  }
   function premioCard(p){
     return '<div class="premio"><div class="foto"><img src="'+fotoPremio(p[2])+'" alt="" loading="lazy"><span class="qtd">'+p[0]+'×</span></div><div class="nome">'+esc(p[1])+'</div></div>';
   }
@@ -342,89 +327,74 @@ p{margin:0}
       '<small class="nota-privacidade"><strong>Privacidade.</strong> As respostas do simulador ficam no seu navegador. O simulador funciona sem cookies. Os sorteios são de responsabilidade da Minerva Foods.</small>'+
     '</div></footer>';
   }
-  function numeros(lista, cls){
-    return '<div class="numeros '+(cls||'')+'"><div class="wrap"><div class="caixa">'+lista.map(function(n){return '<div><b>'+n.valor+'</b><span>'+esc(n.texto)+'</span></div>';}).join('')+'</div></div></div>';
-  }
-
   /* ---------- Página inicial ---------- */
   function inicio(){
-    var p=D.programa, todos={};
-    D.setores.forEach(function(s){s.premios.forEach(function(x){if(!todos[x[2]])todos[x[2]]=x[1].replace(/^\d+\s*/,'');});});
-    D.melhorUnidade.forEach(function(o){o.premios.forEach(function(x){if(!todos[x[2]])todos[x[2]]=x[1];});});
-    var nomesVitrine={tv:'Smart TV 32"',bicicleta:'Bicicleta aro 29',moto:'Moto 125 cc',airfryer:'Air fryer',microondas:'Micro‑ondas',grill:'Grill elétrico',ventilador:'Ventilador',geladeira:'Geladeira 240 L',maquina:'Máquina de lavar 10 kg',ar:'Ar‑condicionado'};
-    var ordem=['moto','tv','geladeira','maquina','ar','bicicleta','airfryer','microondas','grill','ventilador'];
-    return '<div class="view">'+
-      '<section class="hero hero-inicio"><img src="assets/fotos/inicio.jpg" alt="" style="object-position:60% 30%"><div class="wrap">'+
+    var p = D.programa;
+    var setores = D.setores.map(function(s){
+      return '<a class="setor-link" href="#setor-'+s.id+'"><span>'+esc(s.nome)+'</span>'+ic('chevron')+'</a>';
+    }).join('');
 
-        '<h1>Atitude <em>Campeã</em></h1>'+
-        '<p class="lead">'+esc(p.chamada)+' Veja o que o seu setor precisa entregar e quais prêmios estão em jogo.</p>'+
-        '<div class="acoes"><button class="btn btn-coral" type="button" data-rolar="setores">Escolher meu setor '+ic('seta')+'</button><a class="btn btn-vidro" href="#como-funciona">Como funciona</a></div>'+
-      '</div></section>'+
-      numeros(p.numeros)+
-      '<section class="secao" id="setores"><div class="wrap">'+
-        '<div class="cab"><span class="kicker">Escolha seu setor</span><h2>Qual é o seu time?</h2><p>Cada setor tem seus próprios indicadores e prêmios. Toque no seu para ver tudo.</p></div>'+
-        '<div class="grade-setores">'+D.setores.map(cardSetor).join('')+'</div>'+
-      '</div></section>'+
-      '<section class="secao cinza"><div class="wrap">'+
-        '<div class="cab"><span class="kicker">Prêmios do mês</span><h2>O que pode ser seu</h2><p>Os setores campeões do mês têm seus prêmios sorteados entre a equipe.</p></div>'+
-        '<div class="vitrine">'+ordem.map(function(k){return '<div class="premio"><div class="foto"><img src="'+fotoPremio(k)+'" alt="" loading="lazy"></div><div class="nome">'+esc(nomesVitrine[k])+'</div></div>';}).join('')+'</div>'+
-      '</div></section>'+
-      faixaAnual()+
-      '<section class="secao"><div class="wrap">'+
-        '<div class="cab"><span class="kicker">Nosso jeito</span><h2>Os valores que guiam o programa</h2><p>'+esc(p.descricao)+'</p></div>'+
-        '<div class="valores">'+p.valores.map(function(v){return '<div class="valor"><img src="'+v.img+'" alt="'+esc(v.nome)+'" loading="lazy"></div>';}).join('')+'</div>'+
-      '</div></section>'+
+    return '<div class="view consulta">'+
+      '<header class="consulta-cab"><div class="wrap"><div>'+
+        '<h1>Atitude Campeã</h1><p>Indicadores, prêmios e regras por setor.</p>'+
+      '</div></div></header>'+
+      '<section class="wrap consulta-corpo" id="setores" aria-labelledby="titulo-setores">'+
+        '<h2 id="titulo-setores">Escolha seu setor</h2>'+
+        '<div class="grade-setores">'+setores+'</div>'+
+        '<div class="links-consulta"><a href="#como-funciona">Como funciona o programa</a></div>'+
+        '<details class="detalhe-consulta"><summary>Conheça o programa e seus valores</summary>'+
+          '<p>'+esc(p.descricao)+'</p>'+
+          '<div class="valores">'+p.valores.map(function(v){
+            return '<div class="valor"><img src="'+v.img+'" alt="'+esc(v.nome)+'" loading="lazy"></div>';
+          }).join('')+'</div>'+
+        '</details>'+
+      '</section>'+
       rodape()+
     '</div>';
   }
 
-  /* ---------- Landing page do setor ---------- */
+  /* ---------- Página do setor ---------- */
   var resp={terceirizado:null,contrato:null,falta:null,lider:null};
   function landing(s){
-    var outros=D.setores.filter(function(o){return o.id!==s.id;});
-    var indic=s.indicadores.map(function(i){
+    var indicadores = s.indicadores.map(function(i){
       return '<article class="ind"><span class="tile">'+ic(i[2])+'</span><div><h3>'+esc(i[0])+'</h3><p>'+esc(i[1])+'</p><span class="tag">'+NOMES_CAT[i[2]]+'</span></div></article>';
     }).join('');
-    var comuns=s.semComuns?'':'<h3 class="subtitulo">Vale para todos os setores</h3><div class="grade-ind">'+D.comuns.map(function(c){
+    var comuns = s.semComuns ? '' : '<h3 class="subtitulo">Indicadores comuns</h3><div class="grade-ind">'+D.comuns.map(function(c){
       return '<article class="ind'+(c.alerta?' alerta':'')+'"><span class="tile">'+ic(c.cat)+'</span><div><h3>'+esc(c.nome)+'</h3><p>'+esc(c.texto)+'</p></div></article>';
     }).join('')+'</div>';
-    return '<div class="view">'+
-      '<section class="hero"><img src="'+s.foto+'" alt="" style="object-position:'+(s.posFoto||'50% 50%')+'"><div class="wrap">'+
-        '<nav class="trilha" aria-label="Você está em"><a href="#inicio">Início</a>'+ic('chevron')+'<span>Setores</span>'+ic('chevron')+'<span>'+esc(s.nome)+'</span></nav>'+
+    var regras = D.sorteio.map(function(r){
+      return '<li>'+ic('check')+'<span>'+esc(r)+'</span></li>';
+    }).join('');
+    var areas = s.areas.map(function(a){return '<span><i></i>'+esc(a)+'</span>';}).join('');
 
-        '<h1>'+esc(s.nome)+'</h1>'+
-        '<p class="lead">'+esc(s.frase)+'</p>'+
-        '<div class="acoes"><button class="btn btn-coral" type="button" data-rolar="premios">Ver prêmios do mês '+ic('seta')+'</button><button class="btn btn-vidro" type="button" data-rolar="entregas">O que entregar</button></div>'+
-      '</div></section>'+
-      numeros([{valor:String(s.indicadores.length),texto:s.indicadores.length===1?'indicador do setor':'indicadores do setor'},{valor:String(soma(s.premios)),texto:'prêmios sorteados no mês'},{valor:String(s.areas.length),texto:s.areas.length===1?'área participante':'áreas participantes'}],'fatos')+
-
-      '<section class="secao" id="premios"><div class="wrap">'+
-        '<div class="cab"><span class="kicker">Prêmio do mês</span><h2>Se o setor for campeão, estes prêmios são sorteados</h2><p>O sorteio acontece entre os colaboradores do setor que cumprem as regras abaixo.</p></div>'+
-        '<div class="grade-premios">'+s.premios.map(premioCard).join('')+'</div>'+
-        (s.nota?'<div class="nota">'+ic('info')+'<span>'+esc(s.nota)+'</span></div>':'')+
-        '<div class="duas" style="margin-top:28px">'+
-          '<div><h3 class="subtitulo" style="margin-top:0">Quem participa do sorteio</h3><ul class="regras">'+D.sorteio.map(function(r){return '<li>'+ic('check')+'<span>'+esc(r)+'</span></li>';}).join('')+'</ul></div>'+
-          checador()+
+    return '<div class="view consulta">'+
+      '<header class="consulta-cab consulta-cab-setor">'+
+        '<div class="consulta-cab-foto"><img src="'+s.foto+'" alt="" style="object-position:'+(s.posFotoCabecalho||s.posFoto||'50% 50%')+'"></div>'+
+        '<div class="wrap"><a href="#inicio">Todos os setores</a><h1>'+esc(s.nome)+'</h1></div>'+
+      '</header>'+
+      '<div class="wrap consulta-corpo">'+
+        '<div class="abas-consulta" role="group" aria-label="O que você quer consultar?">'+
+          '<button class="aba-consulta" type="button" aria-pressed="true" aria-controls="entregas">Indicadores</button>'+
+          '<button class="aba-consulta" type="button" aria-pressed="false" aria-controls="premios">Prêmios</button>'+
+          '<button class="aba-consulta" type="button" aria-pressed="false" aria-controls="participar">Posso participar?</button>'+
         '</div>'+
-      '</div></section>'+
-
-      '<section class="secao cinza" id="entregas"><div class="wrap">'+
-        '<div class="cab"><span class="kicker">O que o setor entrega</span><h2>Os indicadores que contam pontos</h2><p>Todo mês o setor é comparado com o mesmo setor das outras unidades. Quanto melhor a posição, mais pontos para a unidade.</p></div>'+
-        '<div class="grade-ind">'+indic+'</div>'+
-        comuns+
-      '</div></section>'+
-
-      '<section class="secao"><div class="wrap">'+
-        '<div class="cab"><span class="kicker">Quem faz parte</span><h2>As áreas que concorrem juntas</h2><p>Quem trabalha nestas áreas soma pontos e participa do sorteio do setor.</p></div>'+
-        '<div class="chips">'+s.areas.map(function(a){return '<span><i></i>'+esc(a)+'</span>';}).join('')+'</div>'+
-      '</div></section>'+
-
-      faixaAnual()+
-
-      '<section class="secao"><div class="wrap">'+
-        '<div class="cab"><span class="kicker">Outros setores</span><h2>Conheça os outros times</h2></div>'+
-        '<div class="trilho">'+outros.map(cardSetor).join('')+'</div>'+
-      '</div></section>'+
+        '<section class="painel-consulta" id="entregas" aria-labelledby="titulo-entregas">'+
+          '<h2 id="titulo-entregas">O que o setor precisa entregar</h2>'+
+          '<div class="grade-ind">'+indicadores+'</div>'+comuns+
+        '</section>'+
+        '<section class="painel-consulta" id="premios" aria-labelledby="titulo-premios" hidden>'+
+          '<h2 id="titulo-premios">Prêmios do mês</h2>'+
+          '<p>Se o setor for campeão, estes prêmios serão sorteados entre os colaboradores elegíveis.</p>'+
+          '<div class="grade-premios">'+s.premios.map(premioCard).join('')+'</div>'+
+          (s.nota?'<div class="nota">'+ic('info')+'<span>'+esc(s.nota)+'</span></div>':'')+
+        '</section>'+
+        '<section class="painel-consulta" id="participar" aria-label="Participação no sorteio" hidden>'+
+          checador()+
+          '<details class="detalhe-consulta"><summary>Regras do sorteio mensal</summary><ul class="regras">'+regras+'</ul></details>'+
+          '<details class="detalhe-consulta"><summary>Áreas que concorrem neste setor</summary><div class="chips">'+areas+'</div></details>'+
+        '</section>'+
+        '<div class="links-consulta"><a href="#como-funciona">Como funciona o programa</a></div>'+
+      '</div>'+
       rodape()+
     '</div>';
   }
@@ -513,8 +483,15 @@ p{margin:0}
     else{atual=null;app.innerHTML=inicio();document.title='Atitude Campeã · Minerva Foods';}
   }
   app.addEventListener('click',function(e){
-    var r=e.target.closest('[data-rolar]');
-    if(r){var alvo=document.getElementById(r.dataset.rolar);if(alvo){var y=alvo.getBoundingClientRect().top+window.scrollY-70;window.scrollTo({top:y,behavior:'smooth'});}return;}
+    var aba = e.target.closest('.aba-consulta');
+    if(aba){
+      aba.parentElement.querySelectorAll('.aba-consulta').forEach(function(botao){
+        var selecionada = botao === aba;
+        botao.setAttribute('aria-pressed', String(selecionada));
+        document.getElementById(botao.getAttribute('aria-controls')).hidden = !selecionada;
+      });
+      return;
+    }
     var q=e.target.closest('[data-q]');
     if(q){
       resp[q.dataset.q] = q.dataset.v;

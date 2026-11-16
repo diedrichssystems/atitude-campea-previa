@@ -77,7 +77,7 @@ window.ATITUDE = {
 
   setores: [
     {
-      id: "abate", nome: "Abate", foto: "assets/fotos/campo.jpg", posFoto: "50% 45%",
+      id: "abate", nome: "Abate", foto: "assets/fotos/campo.jpg", posFoto: "50% 45%", posFotoCabecalho: "50% 8%",
       frase: "Onde tudo começa. Qualidade e cuidado desde a primeira etapa.",
       areas: ["Curral", "Abate", "Couros verdes", "Graxaria crua", "Romaneio", "Controle de qualidade"],
       premios: [[2, "Smart TVs 32\"", "tv"], [1, "Bicicleta aro 29", "bicicleta"], [1, "Micro‑ondas", "microondas"], [2, "Grills elétricos", "grill"], [1, "Air fryer", "airfryer"], [3, "Ventiladores", "ventilador"]],
@@ -90,7 +90,7 @@ window.ATITUDE = {
       ]
     },
     {
-      id: "desossa", nome: "Desossa", foto: "assets/fotos/desossa.jpg", posFoto: "50% 30%",
+      id: "desossa", nome: "Desossa", foto: "assets/fotos/desossa.jpg", posFoto: "50% 30%", posFotoCabecalho: "50% 5%",
       frase: "Precisão em cada corte para tirar o melhor de cada peça.",
       areas: ["Desossa", "Embalagens e recortes", "Romaneio", "Controle de qualidade"],
       premios: [[3, "Smart TVs 32\"", "tv"], [2, "Bicicletas aro 29", "bicicleta"], [1, "Micro‑ondas", "microondas"], [3, "Grills elétricos", "grill"], [1, "Máquina de lavar", "maquina"]],
